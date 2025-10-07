@@ -33,7 +33,7 @@ export const questions = [
   },
   {
     question: "feedback",
-    options: ["Bad","Good", "Very Good", "Excellent "],
+    options: ["Bad","Good", "Very Good", "Excellent"],
     answer: "Excellent",
   },
   
