@@ -133,15 +133,16 @@ export default function Result() {
   return (
     <div className="max-w-md mx-auto mt-20 bg-white p-6 rounded-2xl shadow-lg space-y-6">
       <h1 className="text-3xl font-bold text-center">🎉 Quiz Completed!</h1>
-
+      <p className="text-xl font-bold text-center">கலந்து கொண்டதற்கு நன்றி கர்த்தர் உங்களை ஆசீர்வதிப்பாராக.</p>
+ 
       <div className="text-left space-y-1">
         <p><strong>Name:</strong> {name}</p>
         <p><strong>Phone:</strong> {phone}</p>
-        <p><strong>Place:</strong> {place}</p>
+        <p><strong>Division:</strong> {place}</p>
       </div>
 
       <p className="text-xl mt-4 text-center">
-        You scored <strong>{score}</strong> out of <strong>{total}</strong>
+        You scored <strong>{score}</strong> out of <strong>{total - 1}</strong>
       </p>
 
       {/* Top 3 leaderboard */}
@@ -156,18 +157,18 @@ export default function Result() {
               className="flex justify-between items-center border-b py-1 last:border-b-0"
             >
               <span>{getBadge(index)} {p.name} ({p.place})</span>
-              <span>{p.score}/{p.total}</span>
+              <span>{p.score}/{p.total - 1}</span>
             </li>
           ))}
         </ul>
       </div>
 
-      {/* <button
+      <button
         onClick={() => navigate("/")}
         className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 w-full"
       >
         Play Again
-      </button> */}
+      </button>
     </div>
   );
 }

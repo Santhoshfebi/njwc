@@ -13,7 +13,7 @@ export default function Welcome() {
   };
 
   return (
-    <div className="mx-auto mt-20 w-2/5 bg-white p-6 rounded-2xl shadow-lg space-y-4">
+    <div className="mx-auto mt-20 w-96 bg-white p-6 rounded-2xl shadow-lg space-y-4">
       <h1 className="text-2xl font-bold text-center">Welcome to the Quiz!</h1>
       <p className="text-center">Enjoy the Quiz...!</p>
       <h5 className="text-xl font-bold text-center">Chapter: GENESIS</h5>
@@ -30,7 +30,7 @@ export default function Welcome() {
         className="w-full border px-3 py-2 rounded-lg "
       />
       <input
-        placeholder="Place"
+        placeholder="Division"
         value={place}
         onChange={(e) => setPlace(e.target.value)}
         className="w-full border px-3 py-2 rounded-lg "

@@ -117,7 +117,7 @@ export default function Quiz() {
   const [selected, setSelected] = useState(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [score, setScore] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(40);
+  const [timeLeft, setTimeLeft] = useState(20);
 
   const q = questions[current];
 
@@ -141,7 +141,7 @@ export default function Quiz() {
   setSelected(option);
   setShowAnswer(true);
 
-  setTimeout(() => handleNext(), 1500); // delay next question
+  setTimeout(() => handleNext(), 700); // delay next question
 };
 
 
@@ -151,7 +151,7 @@ export default function Quiz() {
       setCurrent((c) => c + 1);
       setSelected(null);
       setShowAnswer(false);
-      setTimeLeft(40); // reset timer
+      setTimeLeft(20); // reset timer
     } else {
       navigate("/result", {
         state: { ...participant, score, total: questions.length },
@@ -159,9 +159,8 @@ export default function Quiz() {
     }
   };
 
-  // 🔹 Progress bar percentages
-  const progressPercent = ((current + 1) / questions.length) * 100;
-  const timePercent = (timeLeft / 40) * 100;
+
+  const timePercent = (timeLeft / 20) * 100;
 
   return (
     <div className="w-3/4 mx-auto mt-20 bg-white p-6 rounded-2xl shadow-lg">
@@ -169,7 +168,7 @@ export default function Quiz() {
       <div className="text-center mb-4 font-semibold text-lg flex justify-evenly">
         <p>Participant: <span className="text-blue-950">{participant.name}</span></p>
               <h5 className="text-xl font-bold text-center">Chapter: GENESIS</h5>
-        <div>Questions : {current + 1} / {questions.length}</div>
+        <div>Questions : {current + 1} / {questions.length - 1}</div>
       </div>
 
       {/* Time & Question Count */}
