@@ -31,5 +31,10 @@ export const questions = [
     options: ["அ. 4 ", "ஆ. 3", "இ. 2 ", "ஈ.1"],
     answer: "இ. 2 ",
   },
+  {
+    question: "feedback",
+    options: ["Bad","Good", "Very Good", "Excellent "],
+    answer: "Excellent",
+  },
   
 ];
