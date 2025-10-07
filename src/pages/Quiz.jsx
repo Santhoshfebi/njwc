@@ -164,31 +164,24 @@ export default function Quiz() {
   const timePercent = (timeLeft / 40) * 100;
 
   return (
-    <div className="max-w-md mx-auto mt-20 bg-white p-6 rounded-2xl shadow-lg">
+    <div className="w-3/4 mx-auto mt-20 bg-white p-6 rounded-2xl shadow-lg">
       {/* Participant Name */}
-      <div className="text-center mb-4 font-semibold text-lg">
-        Participant: <span className="text-blue-600">{participant.name}</span>
+      <div className="text-center mb-4 font-semibold text-lg flex justify-evenly">
+        <p>Participant: <span className="text-blue-950">{participant.name}</span></p>
+              <h5 className="text-xl font-bold text-center">Chapter: GENESIS</h5>
+        <div>Questions : {current + 1} / {questions.length}</div>
       </div>
 
       {/* Time & Question Count */}
-      <div className="flex justify-between mb-2 text-red-600 font-semibold">
+      <div className="flex justify-end mb-2 text-red-600 font-semibold">
         <div>Time Left: {timeLeft}s</div>
-        <div>{current + 1} / {questions.length}</div>
       </div>
 
       {/* Timer Bar */}
       <div className="w-full bg-gray-200 h-2 rounded mb-2">
         <div
-          className="h-2 bg-red-500 rounded transition-all duration-1000 ease-linear"
+          className="h-2 bg-green-500 rounded transition-all duration-1000 ease-linear"
           style={{ width: `${timePercent}%` }}
-        />
-      </div>
-
-      {/* Quiz Progress Bar */}
-      <div className="w-full bg-gray-200 h-3 rounded mb-6">
-        <div
-          className="h-3 bg-blue-500 rounded transition-all duration-300"
-          style={{ width: `${progressPercent}%` }}
         />
       </div>
 
