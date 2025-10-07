@@ -165,7 +165,7 @@ export default function Quiz() {
   return (
     <div className="w-3/4 mx-auto mt-20 bg-white p-6 rounded-2xl shadow-lg">
       {/* Participant Name */}
-      <div className="text-center mb-4 font-semibold text-lg flex justify-evenly">
+      <div className="md:justify-evenly md:flex text-center mb-4 font-semibold text-lg  ">
         <p>Participant: <span className="text-blue-950">{participant.name}</span></p>
               <h5 className="text-xl font-bold text-center">Chapter: GENESIS</h5>
         <div>Questions : {current + 1} / {questions.length - 1}</div>
