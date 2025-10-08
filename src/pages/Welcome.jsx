@@ -111,7 +111,7 @@ export default function Welcome() {
   const navigate = useNavigate();
 
   // Set your scheduled quiz start time here (YYYY-MM-DDTHH:MM:SS)
-  const scheduledTime = new Date("2025-10-08T23:04:00");
+  const scheduledTime = new Date("2025-10-08T23:40:00");
 
   // Countdown / time check
   useEffect(() => {
