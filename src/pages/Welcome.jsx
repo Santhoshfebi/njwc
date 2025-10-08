@@ -8,10 +8,11 @@ export default function Welcome() {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [isQuizAvailable, setIsQuizAvailable] = useState(false);
 
+
   const navigate = useNavigate();
 
   // Set your scheduled quiz start time here (YYYY-MM-DDTHH:MM:SS)
-  const scheduledTime = new Date("2025-10-08T23:40:00");
+  const scheduledTime = new Date("2025-10-12T04:00:00");
 
   // Countdown / time check
   useEffect(() => {
@@ -40,47 +41,52 @@ export default function Welcome() {
   };
 
   // Countdown display
-  const timeLeft = Math.max(0, Math.floor((scheduledTime - currentTime) / 1000));
-  const minutes = Math.floor(timeLeft / 60);
-  const seconds = timeLeft % 60;
+  // Calculate remaining time
+const timeLeftMs = Math.max(0, scheduledTime - currentTime);
+const totalSeconds = Math.floor(timeLeftMs / 1000);
+
+const days = Math.floor(totalSeconds / (24 * 3600));
+const hours = Math.floor((totalSeconds % (24 * 3600)) / 3600);
+const minutes = Math.floor((totalSeconds % 3600) / 60);
+const seconds = totalSeconds % 60;
+
 
   return (
     <div className="flex flex-col md:flex-row items-start justify-center min-h-screen bg-gray-50 p-4">
       {/* Left: Input Form */}
       <div className=" mt-20 w-96 bg-white p-6 rounded-2xl shadow-lg space-y-4">
-       <h1 className="text-2xl font-bold text-center">Welcome to the Quiz!</h1>
-       <p className="text-center">Enjoy the Quiz...!</p>
-       <h5 className="text-xl font-bold text-center">Chapter: GENESIS</h5>
-       <input
-         type="text"
-         placeholder="Your Name"
-         value={name}
-         onChange={(e) => setName(e.target.value)}
-         className="w-full border px-3 py-2 rounded-lg "
-       />
-       <input
-       type="tel"
-         placeholder="Phone Number"
-         value={phone}
-         onChange={(e) => setPhone(e.target.value)}
-         className="w-full px-4 py-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-         maxLength={10}/>
-       <input
-       type="text" 
-         placeholder="Division"
-         value={place}
-         onChange={(e) => setPlace(e.target.value)}
-         className="w-full border px-3 py-2 rounded-lg "
-       />
-       
-       <button
+        <h1 className="text-2xl font-bold text-center">Welcome to the Quiz!</h1>
+        <p className="text-center">Enjoy the Quiz...!</p>
+        <h5 className="text-xl font-bold text-center">Chapter: GENESIS</h5>
+        <input
+          type="text"
+          placeholder="Your Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="w-full border px-3 py-2 rounded-lg "
+        />
+        <input
+          type="tel"
+          placeholder="Phone Number"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          className="w-full px-4 py-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          maxLength={10} />
+        <input
+          type="text"
+          placeholder="Division"
+          value={place}
+          onChange={(e) => setPlace(e.target.value)}
+          className="w-full border px-3 py-2 rounded-lg "
+        />
+
+        <button
           onClick={handleStart}
           disabled={!isQuizAvailable}
-          className={`w-full py-2 rounded-lg text-white transition-all ${
-            isQuizAvailable
+          className={`w-full py-2 rounded-lg text-white transition-all ${isQuizAvailable
               ? "bg-blue-500 hover:bg-blue-600"
               : "bg-gray-400 cursor-not-allowed"
-          }`}
+            }`}
         >
           {isQuizAvailable ? "Start Quiz" : "Quiz Not Started Yet"}
         </button>
@@ -88,10 +94,14 @@ export default function Welcome() {
         {/* Countdown */}
         {!isQuizAvailable && (
           <p className="text-center mt-4 text-red-500 font-semibold">
-            Quiz starts in {minutes} min {seconds} sec ⏳
+            Quiz starts in{" "}
+            {days > 0 && `${days} day${days > 1 ? "s" : ""}, `}
+            {hours}h {minutes}m {seconds}s ⏳
           </p>
         )}
-     </div>
+
+      
+      </div>
 
       {/* Right: Tips */}
       <div className="md:ml-8 mt-20 md:mt-20 bg-white p-6 rounded-2xl shadow-md w-full md:w-1/3">
