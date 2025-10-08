@@ -50,7 +50,7 @@ export default function Welcome() {
       <div className=" mt-20 w-96 bg-white p-6 rounded-2xl shadow-lg space-y-4">
        <h1 className="text-2xl font-bold text-center">Welcome to the Quiz!</h1>
        <p className="text-center">Enjoy the Quiz...!</p>
-       <h5 className="text-xl font-bold text-center">Chapter: Mock Round</h5>
+       <h5 className="text-xl font-bold text-center">Chapter: GENESIS</h5>
        <input
          type="text"
          placeholder="Your Name"
