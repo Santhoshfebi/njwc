@@ -134,7 +134,7 @@ export default function Welcome() {
   const navigate = useNavigate();
 
   // 🕒 Scheduled quiz start time
-  const scheduledTime = new Date("2025-10-09T18:43:00");
+  const scheduledTime = new Date("2025-10-12T18:42:00");
 
   useEffect(() => {
     const timer = setInterval(() => {
