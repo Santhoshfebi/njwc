@@ -13,10 +13,10 @@ export default function Quiz() {
 
   const navigate = useNavigate();
   const { state } = useLocation();
-  const participant = state || {};
+  const results = state || {};
 
   // 🌐 Use language from Welcome page
-  const language = participant.language || "en";
+  const language = results.language || "en";
 
   const q = questions[current];
   const correctAnswer = language === "en" ? q.answer_en : q.answer_ta;
@@ -47,11 +47,11 @@ export default function Quiz() {
       setHasSubmitted(true);
 
       try {
-        const { error } = await supabase.from("participants").insert([
+        const { error } = await supabase.from("results").insert([
           {
-            name: participant.name,
-            phone: participant.phone,
-            place: participant.place,
+            name: results.name,
+            phone: results.phone,
+            place: results.place,
             score: updatedScore,
             total: questions.length,
           },
@@ -62,7 +62,7 @@ export default function Quiz() {
       }
 
       navigate("/result", {
-        state: { ...participant, score: updatedScore, total: questions.length },
+        state: { ...results, score: updatedScore, total: questions.length },
       });
     } else {
       setCurrent((prev) => prev + 1);
@@ -88,7 +88,7 @@ export default function Quiz() {
       <div className="flex flex-col md:flex-row justify-between items-center mb-4 text-lg font-semibold">
         <p>
           👤 {language === "en" ? "Participant" : "பங்கேற்பாளர்"}:{" "}
-          <span className="text-blue-950">{participant.name}</span>
+          <span className="text-blue-950">{results.name}</span>
         </p>
         <h5 className="text-xl font-bold text-center">
           📖 {language === "en" ? "Chapter: GENESIS" : "Chapter: ஆதியாகமம்"}
