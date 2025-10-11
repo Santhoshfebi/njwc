@@ -134,7 +134,7 @@ export default function Welcome() {
   const navigate = useNavigate();
 
   // 🕒 Scheduled quiz start time
-  const scheduledTime = new Date("2025-10-12T16:00:00");
+  const scheduledTime = new Date("2025-10-11T19:52:00");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -185,6 +185,40 @@ export default function Welcome() {
       
       {/* Left: Form */}
       <div className="mt-20 w-96 bg-white p-6 rounded-2xl shadow-2xl space-y-4 border border-gray-100">
+         {/* ⏳ Countdown Timer */}
+        {!isQuizAvailable && (
+          <div className="mt-6 text-center">
+            <p className="text-gray-600 font-medium mb-2">
+              {language === "en" ? "Quiz starts in:" : "வினா தொடங்கும் நேரம்:"}
+            </p>
+
+            <div className="flex justify-center gap-3">
+              {timeUnits.map((unit, idx) => (
+                <div
+                  key={idx}
+                  className="bg-blue-600 text-white rounded-lg px-3 py-2 w-16 shadow-lg"
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={unit.value}
+                      initial={{ y: -10, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: 10, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="text-2xl font-mono font-bold"
+                    >
+                      {String(unit.value).padStart(2, "0")}
+                    </motion.div>
+                  </AnimatePresence>
+                  <div className="text-xs uppercase tracking-wide">
+                    {unit.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         <h1 className="text-3xl font-extrabold text-center text-blue-600 drop-shadow-sm">
           {language === "en" ? "Welcome to the Quiz!" : "வினாடி வினாவிற்கு வருக."}
         </h1>
@@ -259,39 +293,7 @@ export default function Welcome() {
             : "வினா இன்னும் தொடங்கவில்லை"}
         </button>
 
-        {/* ⏳ Countdown Timer */}
-        {!isQuizAvailable && (
-          <div className="mt-6 text-center">
-            <p className="text-gray-600 font-medium mb-2">
-              {language === "en" ? "Quiz starts in:" : "வினா தொடங்கும் நேரம்:"}
-            </p>
-
-            <div className="flex justify-center gap-3">
-              {timeUnits.map((unit, idx) => (
-                <div
-                  key={idx}
-                  className="bg-blue-600 text-white rounded-lg px-3 py-2 w-16 shadow-lg"
-                >
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={unit.value}
-                      initial={{ y: -10, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: 10, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="text-2xl font-mono font-bold"
-                    >
-                      {String(unit.value).padStart(2, "0")}
-                    </motion.div>
-                  </AnimatePresence>
-                  <div className="text-xs uppercase tracking-wide">
-                    {unit.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+       
       </div>
 
       {/* Right: Tips Section */}
