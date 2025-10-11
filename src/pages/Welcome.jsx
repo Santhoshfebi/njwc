@@ -134,7 +134,7 @@ export default function Welcome() {
   const navigate = useNavigate();
 
   // 🕒 Scheduled quiz start time
-  const scheduledTime = new Date("2025-10-11T20:05:00");
+  const scheduledTime = new Date("2025-10-11T20:11:00");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -224,9 +224,17 @@ export default function Welcome() {
         )}
 
 
-        <p className="text-center text-gray-600">
-          {language === "en" ? "Enjoy the Quiz! Let's get started..." : "வினாடி வினாவை அனுபவிக்கவும்...!"}
+        <p disabled={!isQuizAvailable} className="text-center text-gray-600">
+           {isQuizAvailable
+            ? language === "en"
+              ? "Enjoy the Quiz! Let's get started..."
+              : "வினாடி வினாவை அனுபவிக்கவும்...!"
+            : language === "en"
+            ? ""
+            : ""}
         </p>
+
+        
 
         <h5 className="text-xl font-bold text-center text-indigo-500">
           {language === "en" ? "Chapter: GENESIS" : "அத்தியாயம்: ஆதியாகமம்"}
@@ -279,8 +287,7 @@ export default function Welcome() {
         <button
           onClick={handleStart}
           disabled={!isQuizAvailable}
-          className={`w-full py-2 rounded-lg text-white font-semibold transition-all shadow-md ${
-            isQuizAvailable
+          className={`w-full py-2 rounded-lg text-white font-semibold transition-all shadow-md ${isQuizAvailable
               ? "bg-blue-500 hover:bg-blue-600"
               : "bg-gray-400 cursor-not-allowed"
           }`}
