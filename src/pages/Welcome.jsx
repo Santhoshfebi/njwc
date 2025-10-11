@@ -181,7 +181,7 @@ export default function Welcome() {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row items-start justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+    <div className="flex flex-col-reverse md:flex-row items-start justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
       
       {/* Left: Form */}
       <div className="mt-20 w-96 bg-white p-6 rounded-2xl shadow-2xl space-y-4 border border-gray-100">
