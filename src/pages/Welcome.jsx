@@ -134,7 +134,7 @@ export default function Welcome() {
   const navigate = useNavigate();
 
   // 🕒 Scheduled quiz start time
-  const scheduledTime = new Date("2025-10-11T16:00:00");
+  const scheduledTime = new Date("2025-10-12T16:00:00");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -181,7 +181,7 @@ export default function Welcome() {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row items-start justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+    <div className="flex flex-col-reverse md:flex-row items-start justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
       
       {/* Left: Form */}
       <div className="mt-20 w-96 bg-white p-6 rounded-2xl shadow-2xl space-y-4 border border-gray-100">
@@ -301,7 +301,7 @@ export default function Welcome() {
         </h2>
         <ul className="list-disc pl-5 space-y-2 text-gray-700 text-sm leading-relaxed">
           <li>{language === "en" ? "🌐 Choose your preferred language." : "🌐 விருப்பமான மொழியைத் தேர்ந்தெடுக்கவும்."}</li>
-          <li>{language === "en" ? "⏳ Each question has 20 seconds." : "⏳ ஒவ்வொரு கேள்விக்கும் 20 விநாடிகள் மட்டுமே உண்டு."}</li>
+          <li>{language === "en" ? "⏳ You have 20 Minutes to Complete the Quiz" : "⏳ வினாடி வினாவை முடிக்க உங்களுக்கு 20 நிமிடங்கள் வழங்கப்படும்."}</li>
           <li>{language === "en" ? "Once selected, answers cannot be changed." : "ஒருமுறை தேர்ந்தெடுத்த பதிலை மாற்ற முடியாது."}</li>
           <li>{language === "en" ? "Try to answer all questions." : "அனைத்து கேள்விகளுக்கும் பதில் சொல்ல முயலுங்கள்."}</li>
           <li>{language === "en" ? "🏅 Correct answers are rewarded." : "🏅 சரியான பதில்களுக்கு மதிப்பெண் வழங்கப்படும்."}</li>
