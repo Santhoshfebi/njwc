@@ -13,7 +13,7 @@ export default function Quiz() {
   const [selected, setSelected] = useState(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [hasSubmitted, setHasSubmitted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(1200); // 🕒 10 minutes
+  const [timeLeft, setTimeLeft] = useState(1200); // 🕒 20 minutes
   const [showWarning, setShowWarning] = useState(false);
 
   const language = results.language || "en";
@@ -28,7 +28,7 @@ export default function Quiz() {
       return;
     }
 
-    if (timeLeft === 120 && !showWarning) {
+    if (timeLeft === 300 && !showWarning) {
       setShowWarning(true);
     }
 
@@ -89,9 +89,9 @@ export default function Quiz() {
     });
   };
 
-  const totalQuizTime = 1200;
+  const totalQuizTime = 1200;   // 20 min total time to progress bar
   const timePercent = (timeLeft / totalQuizTime) * 100;
-  const isWarningTime = timeLeft <= 120;
+  const isWarningTime = timeLeft <= 300;
 
   return (
     <div className="relative flex items-start justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
@@ -185,8 +185,8 @@ export default function Quiz() {
             </h2>
             <p className="text-gray-700 mb-4">
               {language === "en"
-                ? "Only 2 minutes left! Please review and submit your quiz soon."
-                : "இன்னும் 2 நிமிடங்கள் மட்டுமே உள்ளன! தயவுசெய்து விரைவில் சமர்ப்பிக்கவும்."}
+                ? "Only 5 minutes left...! Please review and submit your quiz soon."
+                : "இன்னும் 5 நிமிடங்கள் மட்டுமே உள்ளன...! தயவுசெய்து விரைவில் சமர்ப்பிக்கவும்."}
             </p>
             <button
               onClick={() => setShowWarning(false)}
