@@ -13,7 +13,7 @@ export default function Quiz() {
   const [selected, setSelected] = useState(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [hasSubmitted, setHasSubmitted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(1200); // 🕒 10 minutes
+  const [timeLeft, setTimeLeft] = useState(300); // 🕒 10 minutes
   const [showWarning, setShowWarning] = useState(false);
 
   const language = results.language || "en";
@@ -89,7 +89,7 @@ export default function Quiz() {
     });
   };
 
-  const totalQuizTime = 1200;
+  const totalQuizTime = 300;
   const timePercent = (timeLeft / totalQuizTime) * 100;
   const isWarningTime = timeLeft <= 120;
 

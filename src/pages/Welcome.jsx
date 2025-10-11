@@ -134,7 +134,7 @@ export default function Welcome() {
   const navigate = useNavigate();
 
   // 🕒 Scheduled quiz start time
-  const scheduledTime = new Date("2025-10-11T19:52:00");
+  const scheduledTime = new Date("2025-10-11T19:55:00");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -185,6 +185,10 @@ export default function Welcome() {
       
       {/* Left: Form */}
       <div className="mt-20 w-96 bg-white p-6 rounded-2xl shadow-2xl space-y-4 border border-gray-100">
+        
+        <h1 className="text-3xl font-extrabold text-center text-blue-600 drop-shadow-sm">
+          {language === "en" ? "Welcome to the Quiz!" : "வினாடி வினாவிற்கு வருக."}
+        </h1>
          {/* ⏳ Countdown Timer */}
         {!isQuizAvailable && (
           <div className="mt-6 text-center">
@@ -219,9 +223,6 @@ export default function Welcome() {
           </div>
         )}
 
-        <h1 className="text-3xl font-extrabold text-center text-blue-600 drop-shadow-sm">
-          {language === "en" ? "Welcome to the Quiz!" : "வினாடி வினாவிற்கு வருக."}
-        </h1>
 
         <p className="text-center text-gray-600">
           {language === "en" ? "Enjoy the Quiz! Let's get started..." : "வினாடி வினாவை அனுபவிக்கவும்...!"}
