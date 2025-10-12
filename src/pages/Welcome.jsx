@@ -228,7 +228,7 @@ export default function Welcome() {
            {isQuizAvailable
             ? language === "en"
               ? "Enjoy the Quiz! Let's get started..."
-              : "வினாடி வினாவை அனுபவிக்கவும்...!"
+              : "வினாடி வினாவை ஆரம்பிக்கலாம்...!"
             : language === "en"
             ? ""
             : ""}

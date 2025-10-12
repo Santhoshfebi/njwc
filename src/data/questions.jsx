@@ -2,14 +2,14 @@ export const questions = [
   {
     question_en: "Which tree did Noah make the ark?",
     question_ta: "நோவா எந்த மரத்தால் பேழையை உண்டாக்கினார்?",
-    options_en: ["Copper Tree", "Rubber Tree", "Fig Tree", "Cataddi Tree"],
+    options_en: ["Cupper tree", "Rubber Tree", "Fig Tree", "Prickly pear tree"],
     options_ta: ["கொப்பேர் மரம்", "ரப்பர் மரம்", "அத்தி மரம்", "காட்டாத்தி மரம்"],
-    answer_en: "Copper Tree",
+    answer_en: "Cupper tree",
     answer_ta: "கொப்பேர் மரம்",
   },
   {
     question_en: "Where was God moving on the heavens and the earth before creating?",
-    question_ta: "தேவன் வானத்தையும் பூ மியும் சிருஷ்டிப்பதற்கு முன்பு எதன் மீது அசைவாடிக் கொண்டிருந்தார்?",
+    question_ta: "தேவன் வானத்தையும் பூமியும் சிருஷ்டிப்பதற்கு முன்பு எதன் மீது அசைவாடிக் கொண்டிருந்தார்?",
     options_en: ["Sky", "Temple", "Water", "Sea"],
     options_ta: ["ஆகாயம்", "ஆலயம்", "ஜலம்", "கடல்"],
     answer_en: "Water",
@@ -242,7 +242,7 @@ export const questions = [
     answer_ta: "மனுஷன்",
   },
   {
-    question_en: "In which land does the river Pishon flow?", ///////////
+    question_en: " In which nation does the golden result?", 
     question_ta: "எந்த தேசத்தில் பொன் விளையும்?",
     options_en: ["Pishon", "Havilah", "Ethiopia", "Euphrates"],
     options_ta: ["பைசோன்", "ஆவிலா", "எத்தியோப்பியா", "ஐபிராத்து"],
@@ -276,7 +276,7 @@ export const questions = [
   {
     question_en: "Which mountain did Noah’s ark rest on?",
     question_ta: "நோவாவின் பேழை எந்த மலைகளின் மேல் தாங்கிற்று?",
-    options_en: ["Amarat", "Ararat", "Arorat", "Arirath"], //////
+    options_en: ["Amrat", "Ararat", "Arorat", "Arirat"], 
     options_ta: ["அம்ராத்", "அராராத்", "அராரத்", "அரராத்"],
     answer_en: "Ararat",
     answer_ta: "அரராத்",
@@ -290,15 +290,15 @@ export const questions = [
     answer_ta: "காண்கிற",
   },
   {
-    question_en: "Is ..... too hard for Yahweh?",  /////////////////
+    question_en: "Is ..... too hard for Yahweh?",
     question_ta: "கர்த்தரால் ..... காரியம் உண்டோ? ",
-    options_en: ["Not", "Anything", "Impossible", "Unprecedented"],  ///////
+    options_en: ["Not", "Anything", "Impossible", "Unprecedented"], 
     options_ta: ["கூடாத", "ஆகாத", "முடியாத", "செய்யாத"],
     answer_en: "Anything",
     answer_ta: "ஆகாத", 
   },
   {
-    question_en: "Run for your life, don’t look … you",
+    question_en: "Run for your life, don’t look ....... you",
     question_ta: "உன் ஜீவன் தப்ப ஓடிப்போ, ....... பாராதே", 
     options_en: ["Return", "Behind", "The world", "Devil"],
     options_ta: ["திரும்பி", "பின்னிட்டு", "உலகத்தை", "பிசாசை"],
@@ -316,8 +316,8 @@ export const questions = [
   {
     question_en: ". Issac said, “ Now the lord has made. He said, “For now Yahweh has made room for us, and we will be fruitful in the land.”",
     question_ta: "ஈசாக்கு தேசத்தில் பலுகும்படிக்கு இப்பொழுது கர்த்தர் நமக்கு இடம் உண்டாக்கினார் என்று ...... பேரிட்டான்?",
-    options_en: ["Esek", "Chitna", "Rehoboth", "Rekopher"],
-    options_ta: ["ஏசேக்கு", "சித்னா", "ரெகோபெத்", "ரெகொபோத்"], //////
+    options_en: ["Esek", "Chitna", "Rehoboth", "Rekopeth"],
+    options_ta: ["ஏசேக்கு", "சித்னா", "ரெகோபெத்", "ரெகொபோத்"],
     answer_en: "Rehoboth",
     answer_ta: "ரெகொபோத்",
   }
